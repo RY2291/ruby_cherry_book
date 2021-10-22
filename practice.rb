@@ -1,1 +1,3 @@
 "abc".class
+
+put "abc"
