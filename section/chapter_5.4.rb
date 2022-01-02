@@ -29,3 +29,4 @@ p currencies[:japan]
   buy_bugger("fish", params)
 
 
+# 今日のこと
