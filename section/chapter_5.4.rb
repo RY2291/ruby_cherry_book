@@ -1,5 +1,5 @@
 # ハッシュのキーには、シンボルが適している
-  currencies = { :japan => "yen", :us => "dollor", :india => "rupee"}
+currencies = { :japan => "yen", :us => "dollor", :india => "rupee"}
 
 # シンボルを使用して値を取り出す
 p currencies[:japan]
