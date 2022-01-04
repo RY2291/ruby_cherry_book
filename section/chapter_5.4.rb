@@ -28,5 +28,3 @@ p currencies[:japan]
   params = { drink: true, potato: false}
   buy_bugger("fish", params)
 
-
-# 今日のこと
