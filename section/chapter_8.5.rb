@@ -84,5 +84,52 @@ p product.price_tag
   p t120 > t180
   p t120 <= t180
   p t120 == t180
-  
 
+  tempos = [Tempo.new(180), Tempo.new(120), Tempo.new(60)]
+  p tempos.sort
+
+# Kernalモジュール
+  # ObjectクラスがKernelクラスをincludeしている
+  p Object.include?(Kernel)
+
+# トップレベルはmainという名前のObject
+  # クラス構文やモジュール構文に囲まれていない一番外側の部分をトップレベルと言う
+    p self
+    p self.class
+
+# クラスやモジュール自身もオブジェクト
+  # Rubyでは全てがオブジェクト
+  class User
+  end
+
+  p User.class
+  p Class.superclass
+
+  module Loggable
+  end
+
+  p Loggable.class
+  p Module.superclass
+
+# モジュールとインスタンス変数
+  # モジュール内で定義したメソッドの中でインスタンス変数を読み書きすると、include先のクラスの変数を読み書きしたことと同じなる。
+  module NameChanger
+    def change_name
+      self.name = "アリス"
+    end
+  end
+
+  class User
+    include NameChanger
+
+    attr_accessor :name
+
+    def initialize(name)
+      @name = name
+    end
+  end
+
+  user = User.new("alice")
+  p user.name
+  p user.change_name
+  p user.name
